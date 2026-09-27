@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:16
+    container_name: aiohttp_ads_postgres
+    environment:
+      POSTGRES_DB: ads
+      POSTGRES_USER: ads_user
+      POSTGRES_PASSWORD: ads_password
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
